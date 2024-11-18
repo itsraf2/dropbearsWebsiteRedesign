@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - The Drop Bears</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="https://dropbears.playcode.io" class="logo">The Drop Bears</a>
+        <ul class="nav-links">
+            <li><a href="https://dropbears.playcode.io/about">About Us</a></li>
+            <li><a href="https://dropbears.playcode.io/join">Join</a></li>
+            <li class="dropdown">
+                <a href="https://dropbears.playcode.io/robots">Robots <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="https://dropbears.playcode.io/robots#current">Current Robot</a>
+                    <a href="https://dropbears.playcode.io/robots#past">Past Robots</a>
+                    <a href="https://dropbears.playcode.io/robots#awards">Awards</a>
+                </div>
+            </li>
+            <li><a href="https://dropbears.playcode.io/sponsors">Sponsors</a></li>
+            <li><a href="https://dropbears.playcode.io/calendar">Calendar</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <h1>Join The Drop Bears</h1>
+        <section class="join-info">
+            <h2>How to Join</h2>
+            <p>We're always looking for passionate individuals to join our team!</p>
+            
+            <form class="join-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest">Area of Interest:</label>
+                    <select id="interest" name="interest">
+                        <option value="programming">Programming</option>
+                        <option value="mechanical">Mechanical</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="business">Business/Marketing</option>
+                    </select>
+                </div>
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html> 
