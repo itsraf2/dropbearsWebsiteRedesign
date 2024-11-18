@@ -4,230 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Drop Bears</title>
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --primary-bg: #202842;
-            --accent-color: #FCB900;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Geist Mono', monospace;
-        }
-
-        body {
-            background-color: var(--primary-bg);
-            color: white;
-        }
-
-        /* Navigation Styles */
-        nav {
-            background-color: var(--primary-bg);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        /* Dropdown Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--primary-bg);
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: var(--accent-color);
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://res.cloudinary.com/dws8o7mce/image/upload/v1731896207/Southern_Cross_Team_Photo_2023_tsqotb.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(8px);
-            -webkit-filter: blur(8px);
-            z-index: -1;
-        }
-
-        .hero-content {
-            z-index: 1;
-            padding: 2rem;
-        }
-
-        .hero-title {
-            font-size: 4.5rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: white;
-            max-width: 800px;
-            line-height: 1.6;
-        }
-
-        /* Content Section */
-        .content {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .content a {
-            color: var(--accent-color);
-        }
-
-        /* Grid Layout */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .info-card {
-            padding: 2rem;
-            border-radius: 8px;
-            border: 2px solid var(--accent-color);
-        }
-
-        .info-card h2 {
-            color: var(--accent-color);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .info-card hr {
-            border: none;
-            height: 2px;
-            background-color: var(--accent-color);
-            margin: 1rem 0;
-        }
-
-        .info-card p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        /* Add main heading style */
-        .section-title {
-            color: var(--accent-color);
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-top: 2rem;
-        }
-
-        /* Bouncing Arrow */
-        .scroll-arrow {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 2rem;
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-30px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-15px) translateX(-50%);
-            }
-        }
-
-        .scroll-arrow.hidden {
-            opacity: 0;
-        }
-
-        /* Add style for the hero logo */
-        .hero-logo {
-            max-width: 500px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
         <a href="https://dropbears.playcode.io" class="logo">The Drop Bears</a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <ul class="nav-links">
             <li><a href="https://dropbears.playcode.io/about">About Us</a></li>
             <li><a href="https://dropbears.playcode.io/join">Join</a></li>
@@ -291,26 +79,67 @@
                 <p>Engage and recruit high school students from across the Sydney region and manage team social media and sponsorship</p>
             </div>
         </div>
+
+        <section class="season-highlights">
+            <h1 class="section-title">2023 Season Highlights</h1>
+            <div class="highlights-content">
+                <p>The 2023 season began on January 8th with our annual game review meeting, which launched an eight-week intensive process. Our team engaged in planning, design, prototyping, building, and programming activities leading up to the development of an outstanding robot.</p>
+                
+                <p>Our team presented its work during the Australian Southern Cross Regional competition held at the WIN Entertainment Centre in Wollongong. The competition took place on Friday to Sunday, the 10th to 12th of March, where practice sessions were held on Friday and opening ceremonies plus qualifying matches on Saturday, while on Sunday, it was qualifying rounds, playoffs, closing ceremony, and awards. With our alliance Koalified (6996) and Embers (7583), we placed a great third overall.</p>
+                
+                <p>This trend of success continued in the competition of Dual Down Under, where we, alliances with teams of Barker Redbacks-4613 and ARTEMIS-5876 won the event.</p>
+            </div>
+
+            <h2 class="section-subtitle">Leadership Team</h2>
+            <div class="leadership-content">
+                <p>Our mentors bring a wealth of experience and passion to help the next generation of robotics enthusiasts. Ian Thomas is our current Head Mentor, who has been with the Drop Bears since their inception and has served nearly a decade; he brings professional robotics experience back into the team. Andreas Heintze continues his committed leadership after seven years with the team, helping guide our future at The University of Sydney.</p>
+                
+                <p>Dr. James Ward of the Australian Centre for Robotics at the University of Sydney has been an integral part of hosting The Drop Bears over the past seven years. His enthusiasm in helping students find and utilize their passion in the areas of STEM outside the typical schooling has been invaluable to our program's success.</p>
+            </div>
+        </section>
     </div>
 
     <script>
-        // Existing scroll event listener
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             const arrow = document.querySelector('.scroll-arrow');
             
             if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+                nav.classList.add('scrolled');
                 arrow.classList.add('hidden');
             } else {
-                nav.style.boxShadow = 'none';
+                nav.classList.remove('scrolled');
                 arrow.classList.remove('hidden');
             }
         });
 
-        // Optional: Scroll to content when arrow is clicked
         document.querySelector('.scroll-arrow').addEventListener('click', function() {
             document.querySelector('.content').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Add hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
         });
     </script>
 </body>

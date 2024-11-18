@@ -33,27 +33,32 @@
             <h2>How to Join</h2>
             <p>We're always looking for passionate individuals to join our team!</p>
             
-            <form class="join-form">
-                <div class="form-group">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="interest">Area of Interest:</label>
-                    <select id="interest" name="interest">
-                        <option value="programming">Programming</option>
-                        <option value="mechanical">Mechanical</option>
-                        <option value="electrical">Electrical</option>
-                        <option value="business">Business/Marketing</option>
-                    </select>
-                </div>
-                <button type="submit">Submit Application</button>
-            </form>
+            <div class="google-form-container">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScQcI4WNEyhop5PvZrPBDDOjWkOML8W9z5QtaQ6kQUmJQLgnQ/viewform?embedded=true" 
+                    width="640" 
+                    height="978" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Loading…
+                </iframe>
+            </div>
         </section>
     </div>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const team = urlParams.get('team');
+            
+            if (team) {
+                const teamSelect = document.querySelector('select[name="team"]');
+                if (teamSelect) {
+                    teamSelect.value = team;
+                }
+            }
+        }
+    </script>
 </body>
 </html> 
